@@ -1,4 +1,4 @@
-def call(String file)
+def call(Map config)
 {
-    echo file
+    echo config.file
 }
