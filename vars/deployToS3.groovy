@@ -1,6 +1,4 @@
-def call(String file, String bucket, String bucketPath)
+def call(String file)
 {
     echo file
-    echo bucket
-    echo bucketPath
 }
