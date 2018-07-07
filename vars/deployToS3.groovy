@@ -1,13 +1,11 @@
-def call(Map config)
+def call()
 {
-    echo config.file
+    def properties = readJSON file: ConfigLocation
 
-    echo DeploymentProperties.AWSBucket
-
-    withAWS(credentials: DeploymentProperties.AWSCredentials, region: DeploymentProperties.AWSRegion) {
+    withAWS(credentials: properties.AWSCredentials, region: properties.AWSRegion) {
           timeout(time: 3, unit: 'MINUTES') {
             retry(count: 5) {
-              s3Upload(file: DeploymentProperties.ZipPackageName, bucket: DeploymentProperties.AWSBucket, path: "${WorkspaceName}/${DeploymentProperties.ZipPackageName}")
+              s3Upload(file: properties.ZipPackageName, bucket: properties.AWSBucket, path: "${WorkspaceName}/${properties.ZipPackageName}")
             }
 
           }
