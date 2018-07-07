@@ -1,4 +1,6 @@
-def call(String bucketName)
+def call(String file, String bucket, String bucketPath)
 {
-    echo "Deploy from library"
+    echo file
+    echo bucket
+    echo bucketPath
 }
