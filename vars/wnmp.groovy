@@ -1,7 +1,6 @@
-def call(Map config)
+def call()
 {
     def properties = readJSON file: ConfigLocation
-    echo ABC
 
     echo properties.AWSBucket
 }
