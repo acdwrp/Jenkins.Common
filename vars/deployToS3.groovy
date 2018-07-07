@@ -2,6 +2,8 @@ def call(Map config)
 {
     echo config.file
 
+    echo DepolymentProperties.AWSBucket
+
     withAWS(credentials: DepolymentProperties.AWSCredentials, region: DepolymentProperties.AWSRegion) {
           timeout(time: 3, unit: 'MINUTES') {
             retry(count: 5) {
