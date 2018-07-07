@@ -2,12 +2,12 @@ def call(Map config)
 {
     echo config.file
 
-    echo DepolymentProperties.AWSBucket
+    echo DeploymentProperties.AWSBucket
 
-    withAWS(credentials: DepolymentProperties.AWSCredentials, region: DepolymentProperties.AWSRegion) {
+    withAWS(credentials: DeploymentProperties.AWSCredentials, region: DeploymentProperties.AWSRegion) {
           timeout(time: 3, unit: 'MINUTES') {
             retry(count: 5) {
-              s3Upload(file: DepolymentProperties.ZipPackageName, bucket: DepolymentProperties.AWSBucket, path: "${WorkspaceName}/${DepolymentProperties.ZipPackageName}")
+              s3Upload(file: DeploymentProperties.ZipPackageName, bucket: DeploymentProperties.AWSBucket, path: "${WorkspaceName}/${DeploymentProperties.ZipPackageName}")
             }
 
           }
