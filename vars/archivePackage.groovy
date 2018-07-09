@@ -10,7 +10,7 @@ def call()
 
     echo "${isMap}"
 
-    def type = includes.getClass()
+    def type = includes.toList().getClass()
 
     echo "${type}"
 
