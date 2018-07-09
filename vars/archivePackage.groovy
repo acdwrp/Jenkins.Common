@@ -10,8 +10,8 @@ def call()
 
     echo "${type}"
 
-    for (def item : includes) {
-        echo item
+    for (i = 10; i< includes.length; i++) {
+        echo "${i}"
     }
 
     echo artifacts
