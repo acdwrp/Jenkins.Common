@@ -4,7 +4,7 @@ def call()
 
     def includes = properties.Artifacts.Includes.toList()
 
-    def artifacts = ""
+    def artifacts1 = ""
 
     def type = includes.getClass()
 
@@ -17,10 +17,10 @@ def call()
     echo "${type2}"
 
     for (i = 0; i< includes.size(); i++) {
-       
+       def in = sub[i]
     }
 
-    echo artifacts
+    echo artifacts1
 
     zip(glob: properties.ArtifactsToPack, zipFile: properties.ZipPackageName)
     archiveArtifacts(artifacts: properties.ZipPackageName, onlyIfSuccessful: true, fingerprint: true)
