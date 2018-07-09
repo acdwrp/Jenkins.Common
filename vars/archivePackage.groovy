@@ -11,7 +11,7 @@ def call()
     echo "${type}"
 
     for (i = 0; i< includes.size(); i++) {
-        echo "${i}"
+        artifacts = (index == 0) ? artifacts + "${includes[i]}" : artifacts + ", ${includes[i]}"
     }
 
     echo artifacts
