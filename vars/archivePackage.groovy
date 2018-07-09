@@ -2,7 +2,7 @@ def call()
 {
     def properties = readJSON file: ConfigLocation
 
-    def includes = properties.Artifacts.Includes.toList().toList()
+    def includes = properties.Artifacts.Includes.toList()
 
     def artifacts = ""
 
@@ -10,7 +10,9 @@ def call()
 
     echo "${type}"
 
-    
+    for (def item : includes) {
+        echo item
+    }
 
     echo artifacts
 
