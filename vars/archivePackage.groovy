@@ -14,6 +14,6 @@ def call()
 
     echo includedPattern
 
-    zip(glob: properties.ArtifactsToPack, zipFile: properties.ZipPackageName)
+    zip(glob: includedPattern, zipFile: properties.ZipPackageName)
     archiveArtifacts(artifacts: properties.ZipPackageName, onlyIfSuccessful: true, fingerprint: true)
 }
