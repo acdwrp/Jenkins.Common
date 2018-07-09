@@ -6,7 +6,11 @@ def call()
 
     
 
-    def subl = includes.subList(0, includes.size() -1)
+    def p = includes[0..includes.size()]
+
+    def type = p.getClass()
+
+    echo "${type}"
 
     
 
