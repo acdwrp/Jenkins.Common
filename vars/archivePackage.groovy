@@ -6,7 +6,7 @@ def call()
 
     
 
-    def p = includes[0..includes.size()]
+    def p = includes[0..includes.size() - 1]
 
     def type = p.getClass()
 
