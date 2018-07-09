@@ -10,7 +10,7 @@ def call()
 
     echo "${type}"
 
-    includes.eachWithIndex {listValue, index=> artifacts = (index == 0) ? artifacts + "${listValue}" : artifacts + ", ${listValue}"}
+    
 
     echo artifacts
 
