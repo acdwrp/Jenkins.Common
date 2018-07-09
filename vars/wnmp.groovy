@@ -1,4 +1,4 @@
-def call()
+def call(def environment)
 {
     def properties = readJSON file: ConfigLocation
 
