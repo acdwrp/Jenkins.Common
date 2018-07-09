@@ -6,7 +6,13 @@ def call()
 
     def artifacts = ""
 
-    includes.eachWithIndex {listValue, index=> artifacts = (index == 0) ? artifacts + "${listValue}" : artifacts + ", ${listValue}"}
+    def isMap = includes instanceof java.util.LinkedHashMap
+
+    echo isMap
+
+    def type = includes.getClass()
+
+    echo type
 
     echo artifacts
 
