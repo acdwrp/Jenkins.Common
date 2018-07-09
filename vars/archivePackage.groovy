@@ -9,7 +9,7 @@ def call()
     for (i = 0; i< includes.size(); i++) {
        def incl = includes[i]
 
-       aml = (index == 0) ? aml + "${listValue}" : aml + ", ${listValue}"
+       aml = (index == 0) ? aml + "${incl}" : aml + ", ${incl}"
 
        echo aml
     }
