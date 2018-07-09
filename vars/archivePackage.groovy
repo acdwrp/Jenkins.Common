@@ -4,15 +4,15 @@ def call()
 
     def includes = properties.Artifacts.Includes.toList()
 
-    def aml = ""
+    def includedPattern = ""
 
     for (i = 0; i< includes.size(); i++) {
-       def incl = includes.get(i)
+       def item = includes.get(i)
 
-       aml = (i == 0) ? aml + "${incl}" : aml + ", ${incl}"
-
-       echo aml
+       includedPattern = (i == 0) ? includedPattern + "${item}" : includedPattern + ", ${item}"
     }
+
+    echo includedPattern
 
     zip(glob: properties.ArtifactsToPack, zipFile: properties.ZipPackageName)
     archiveArtifacts(artifacts: properties.ZipPackageName, onlyIfSuccessful: true, fingerprint: true)
