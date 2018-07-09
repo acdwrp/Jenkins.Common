@@ -10,7 +10,7 @@ def call()
 
     echo "${type}"
 
-    for (i = 10; i< includes.length; i++) {
+    for (i = 10; i< includes.size(); i++) {
         echo "${i}"
     }
 
