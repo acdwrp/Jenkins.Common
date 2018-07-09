@@ -10,8 +10,14 @@ def call()
 
     echo "${type}"
 
+    def sub = includes.subList(0, includes.size() -1)
+
+    def type2 = sub.getClass()
+
+    echo "${type2}"
+
     for (i = 0; i< includes.size(); i++) {
-        artifacts = (index == 0) ? artifacts + "${includes.getAt(i)}" : artifacts + ", ${includes.getAt(i)}"
+       
     }
 
     echo artifacts
