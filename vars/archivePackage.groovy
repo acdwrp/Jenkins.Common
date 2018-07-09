@@ -6,6 +6,8 @@ def call()
 
     
 
+    def subl = includes.subList(0, includes.size() -1)
+
     
 
 
