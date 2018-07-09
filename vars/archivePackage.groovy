@@ -6,11 +6,11 @@ def call()
 
     
 
-    def p = includes[0..includes.size() - 1]
+    def p = includes.get(0)
 
-    def type = p.getClass()
+    
 
-    echo "${type}"
+    echo "${p}"
 
     
 
