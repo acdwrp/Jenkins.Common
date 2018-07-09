@@ -6,13 +6,7 @@ def call()
 
     
 
-    def sub = includes.subList(0, includes.size() -1)
-
-    for (i = 0; i< sub.size(); i++) {
-       def incl = sub[i]
-
-       echo incl
-    }
+    
 
 
     zip(glob: properties.ArtifactsToPack, zipFile: properties.ZipPackageName)
