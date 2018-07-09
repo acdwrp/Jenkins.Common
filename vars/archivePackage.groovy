@@ -17,7 +17,7 @@ def call()
     echo "${type2}"
 
     for (i = 0; i< includes.size(); i++) {
-       def in = sub[i]
+       def incl = sub[i]
     }
 
     echo artifacts1
