@@ -8,11 +8,11 @@ def call()
 
     def isMap = includes instanceof java.util.LinkedHashMap
 
-    echo isMap
+    echo "${isMap}"
 
     def type = includes.getClass()
 
-    echo type
+    echo "${type}"
 
     echo artifacts
 
