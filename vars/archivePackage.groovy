@@ -4,14 +4,14 @@ def call()
 
     def includes = properties.Artifacts.Includes.toList()
 
-    def artifacts = ""
+    def aml = ""
 
     for (i = 0; i< includes.size(); i++) {
        def incl = includes[i]
 
-       artifacts = (index == 0) ? artifacts + "${listValue}" : artifacts + ", ${listValue}"
+       aml = (index == 0) ? aml + "${listValue}" : aml + ", ${listValue}"
 
-       echo artifacts
+       echo aml
     }
 
     zip(glob: properties.ArtifactsToPack, zipFile: properties.ZipPackageName)
