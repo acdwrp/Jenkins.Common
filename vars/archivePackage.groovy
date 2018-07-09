@@ -2,17 +2,15 @@ def call()
 {
     def properties = readJSON file: ConfigLocation
 
-    def includes = properties.Artifacts.Includes
+    def includes = properties.Artifacts.Includes.toList()
 
     def artifacts = ""
 
-    def isMap = includes instanceof java.util.LinkedHashMap
-
-    echo "${isMap}"
-
-    def type = includes.toList().getClass()
+    def type = includes.getClass()
 
     echo "${type}"
+
+    includes.eachWithIndex {listValue, index=> artifacts = (index == 0) ? artifacts + "${listValue}" : artifacts + ", ${listValue}"}
 
     echo artifacts
 
