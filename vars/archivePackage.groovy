@@ -18,6 +18,8 @@ def call()
 
     for (i = 0; i< includes.size(); i++) {
        def incl = sub[i]
+
+       echo incl
     }
 
     echo artifacts1
