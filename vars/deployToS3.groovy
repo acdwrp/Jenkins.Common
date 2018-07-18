@@ -8,7 +8,7 @@ def call()
               s3Upload(file: properties.ZipPackageName, bucket: properties.AWSBucket, path: "${WorkspaceName}/${properties.ZipPackageName}")
 
               // Write an useful file, which is needed to be archived.
-              def metaFile = "${WorkspaceName}/meta.json"
+              def metaFile = "meta.json"
 
               writeFile file: metaFile, text: "{ \"LatestVersion\" :  ${BUILD_NUMBER}}"
 
