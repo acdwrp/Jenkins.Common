@@ -10,7 +10,7 @@ def call()
               // Write an useful file, which is needed to be archived.
               def metaFile = "${WorkspaceName}/meta.json"
 
-              writeFile file: metaFile, text: "This file is useful, need to archive it. ${BUILD_NUMBER}"
+              writeFile file: metaFile, text: "{ \"LatestVersion\" :  ${BUILD_NUMBER}}"
 
               s3Upload(file: metaFile, bucket: properties.AWSBucket, path: "${WorkspaceName}/meta.json")
             }
