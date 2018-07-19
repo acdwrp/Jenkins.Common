@@ -9,7 +9,7 @@ def call(def config)
             retry(count: 5) {
               writeFile file: metaFile, text: "{ \"LatestVersion\" :  ${BUILD_NUMBER}}"
 
-              s3Upload(file: metaFile, bucket: properties.AWSBucket, path: "${WorkspaceName}/${config.environment}/meta.json")
+              s3Upload(file: metaFile, bucket: properties.AWSBucket, path: "${WorkspaceName}/${config.environment}.meta.json")
             }
           }
         }       
